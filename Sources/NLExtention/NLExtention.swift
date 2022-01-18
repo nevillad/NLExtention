@@ -1,18 +1,18 @@
 import Foundation
 
-struct NLExtention {
-    var text = "Hello, World!"
-}
-
 public extension String {
-    func isEmpty() -> Bool {
-        return true
+    var containsOnlyDigits: Bool {
+        let notDigits = NSCharacterSet.decimalDigits.inverted
+        return rangeOfCharacter(from: notDigits, options: String.CompareOptions.literal, range: nil) == nil
     }
-}
 
+    var containsOnlyLetters: Bool {
+        let notLetters = NSCharacterSet.letters.inverted
+        return rangeOfCharacter(from: notLetters, options: String.CompareOptions.literal, range: nil) == nil
+    }
 
-public extension Date {
-    func toString() -> String {
-        return "Date String"
+    var isAlphanumeric: Bool {
+        let notAlphanumeric = NSCharacterSet.decimalDigits.union(NSCharacterSet.letters).inverted
+        return rangeOfCharacter(from: notAlphanumeric, options: String.CompareOptions.literal, range: nil) == nil
     }
 }
