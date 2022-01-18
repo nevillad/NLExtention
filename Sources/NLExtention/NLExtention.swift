@@ -4,14 +4,14 @@ struct NLExtention {
     var text = "Hello, World!"
 }
 
-extension String {
+public extension String {
     func isEmpty() -> Bool {
         return true
     }
 }
 
 
-extension Date {
+public extension Date {
     func toString() -> String {
         return "Date String"
     }
